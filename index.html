@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Página de Propostas da Bitix Customer.">
+    <meta name="author" content="Seu Nome">
+    <meta name="keywords" content="propostas, seguro saúde, Bitix Customer, planos, preços">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Histórico de Propostas</title>
+</head>
+<body>
+<h1>Formulário de Proposta Plano de saúde</h1>
+<form id="formulario">
+    <label for="registro_plano">Registro do Plano:</label>
+    <select id="registro_plano" required>
+        <!-- Os selects virão do js. -->
+    </select>
+    <br>
+    <div id="beneficiarios">
+        <label for="qtd_beneficiarios">Quantidade de Beneficiários:</label>
+        <select id="qtd_beneficiarios">
+            <option value="0">Seleceione</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <br>
+    </div>
+    <br>
+    <button type="submit">Enviar Proposta</button>
+</form>
+<div id="historico-container">
+    <h1>Histórico de Propostas</h1>
+    <div id="historico">
+          <!-- historico será carregado pelo js. -->
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="scripts.js"></script>
+<script>
+
+</script>
+</body>
+</html>

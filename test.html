@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Histórico de Propostas</title>
+</head>
+<body>
+<h1>Histórico de Propostas</h1>
+<div id="historico"></div>
+
+<script>
+    async function carregarHistorico() {
+        const response = await fetch('../api/proposta.json');
+        const propostas = await response.json();
+
+        const historicoDiv = document.getElementById('historico');
+        historicoDiv.innerHTML = '';
+
+        if (propostas.length === 0) {
+            historicoDiv.innerHTML = '<p>Nenhuma proposta feita até o momento.</p>';
+            return;
+        }
+
+        for (const proposta of propostas) {
+            const propostaDiv = document.createElement('div');
+            propostaDiv.innerHTML = `
+                    <p>Plano: ${proposta.planonome}</p>
+                    <p>Preço Total: ${proposta.preco_total}</p>
+                    <p>Beneficiários:</p>
+                    <ul>
+                        ${proposta.beneficiarios.map(b => `<li>${b.nome}, ${b.idade} anos, Preço: ${b.preco}</li>`).join('')}
+                    </ul>
+                    <hr>
+                `;
+            historicoDiv.appendChild(propostaDiv);
+        }
+    }
+
+    carregarHistorico();
+</script>
+</body>
+</html>
